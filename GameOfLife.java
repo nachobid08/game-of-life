@@ -35,16 +35,22 @@ public class GameOfLife implements Board {
             for (int j = 0; j < board[i].length; j++) {
                 int alive = countNeighbors(i, j);
 
-                
+                if (board[i][j] ==1) {
+                    if (alive < 2 || alive > 3){
+                        newB[i][j] = 0;
+                    }
+                    else {
+                        newB[i][j] = 1;
+                    }
+                }
+                else {
+                    if (aliveNeighbhors == 3){
+                        newB[i][j] =1;
+                    }
+                }
 
 
-
-
-
-
-
-
-
+        board = newB;
         print();
         // Update the game board, store a 1 if the cell is alive and a 0 otherwise.
     }
