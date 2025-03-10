@@ -58,6 +58,17 @@ public class GameOfLife implements Board {
 
     public int countNeighbors(int x, int y) {
         int count = 0;
+
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                if (!(i == 0 && j == 0)) {
+                    if (get(x + i, y + j) == 1) {
+                        count++;
+                    }
+                }
+            }
+        }
+
         // count the number of neighbors the cell has
         // use the get(x,y) method to read any board state you need.
         return count;
