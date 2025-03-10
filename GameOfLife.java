@@ -8,7 +8,7 @@ public class GameOfLife implements Board {
     public GameOfLife(int x, int y)
     {
         // Construct a 2d array of the given x and y size.
-        board = new int[x][y]
+        board = new int[x][y];
     }
 
     // Set values on the board
@@ -44,10 +44,12 @@ public class GameOfLife implements Board {
                     }
                 }
                 else {
-                    if (aliveNeighbhors == 3){
+                    if (alive == 3){
                         newB[i][j] =1;
                     }
                 }
+            }
+        }
 
 
         board = newB;
